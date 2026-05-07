@@ -4,489 +4,643 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SEO Growth & Organic Traffic Scaling — 420.com</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --black: #111111;
-    --gray-dark: #444444;
-    --gray-mid: #888888;
-    --gray-light: #cccccc;
-    --border: #e2e2e2;
-    --bg: #ffffff;
-    --bg-soft: #f7f7f5;
-    --green: #1a6640;
-    --green-light: #edf5f0;
+    --black: #0f0f0f;
+    --gray-dark: #3a3a3a;
+    --gray-mid: #7a7a7a;
+    --gray-light: #c8c8c8;
+    --border: #e0ddd8;
+    --bg: #faf9f7;
+    --bg-white: #ffffff;
+    --bg-dark: #1a2e1f;
+    --bg-warm: #f3f0eb;
+    --green: #1f7a48;
+    --green-mid: #2d9e60;
+    --green-pale: #e8f4ee;
+    --green-dark: #0f3d22;
+    --accent: #c8f04a;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--bg);
     color: var(--black);
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
+ 
+  /* ── HEADER ── */
   header {
-    border-bottom: 1px solid var(--border);
-    padding: 1.25rem 3rem;
+    background: var(--bg-dark);
+    padding: 1.1rem 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
-
-  .header-meta {
-    font-size: 0.78rem;
-    color: var(--gray-mid);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
+ 
   .header-brand {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.15rem;
-    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    letter-spacing: 0.02em;
   }
-
-  .hero {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 5rem 3rem 4rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-label {
-    font-size: 0.75rem;
+ 
+  .header-meta {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gray-mid);
-    margin-bottom: 1.75rem;
   }
-
+ 
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg-dark);
+    padding: 5.5rem 3.5rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+ 
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(45,158,96,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+ 
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--green-mid);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+ 
+  .hero-eyebrow span {
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--green-mid);
+  }
+ 
   .hero-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(2.4rem, 5vw, 3.75rem);
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    max-width: 750px;
     margin-bottom: 1.5rem;
-    max-width: 700px;
     font-weight: 400;
   }
-
+ 
   .hero-title em {
     font-style: italic;
-    color: var(--green);
+    color: var(--accent);
   }
-
+ 
   .hero-sub {
     font-size: 1rem;
-    color: var(--gray-dark);
-    max-width: 560px;
+    color: rgba(255,255,255,0.55);
+    max-width: 540px;
     line-height: 1.75;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
+    font-weight: 300;
   }
-
-  .metrics-row {
+ 
+  /* ── METRICS STRIP ── */
+  .metrics-strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: auto;
   }
-
+ 
   .metric {
-    padding: 1.5rem 1.25rem;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.25s;
   }
-
+ 
+  .metric:last-child { border-right: none; }
+  .metric:hover { background: rgba(255,255,255,0.03); }
+ 
   .metric-value {
-    font-family: 'Instrument Serif', serif;
-    font-size: 2.3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
     line-height: 1;
-    color: var(--black);
+    color: #ffffff;
     letter-spacing: -0.02em;
     margin-bottom: 0.3rem;
   }
-
+ 
   .metric-change {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--green);
-    margin-bottom: 0.15rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
     display: block;
+    margin-bottom: 0.15rem;
   }
-
+ 
   .metric-label {
-    font-size: 0.72rem;
-    color: var(--gray-mid);
-    letter-spacing: 0.03em;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
-
+ 
+  /* ── LAYOUT ── */
   .content-wrap {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 3rem;
+    padding: 0 3.5rem;
   }
-
+ 
+  /* ── SECTION ── */
   .section {
-    padding: 4rem 0;
+    padding: 4.5rem 0;
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .section-num {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gray-mid);
+    letter-spacing: 0.14em;
+    color: var(--green);
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
   }
-
+ 
   h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.8rem;
-    letter-spacing: -0.015em;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.01em;
     line-height: 1.2;
     color: var(--black);
     font-weight: 400;
     margin-bottom: 1.25rem;
   }
-
+ 
   p {
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     color: var(--gray-dark);
-    line-height: 1.78;
+    line-height: 1.8;
     margin-bottom: 1rem;
+    font-weight: 300;
   }
-
+ 
   p:last-child { margin-bottom: 0; }
-
+ 
+  /* ── CLIENT INFO ── */
   .client-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-    margin-top: 2rem;
+    border: 1px solid var(--border);
+    margin-top: 2.25rem;
+    background: var(--bg-white);
   }
-
+ 
   .info-block {
-    padding: 1.25rem 1.5rem;
+    padding: 1.4rem 1.75rem;
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-
+ 
+  .info-block:nth-child(even) { border-right: none; }
+  .info-block:nth-last-child(-n+2) { border-bottom: none; }
+ 
   .info-block-label {
-    font-size: 0.7rem;
+    font-size: 0.67rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--gray-mid);
     margin-bottom: 0.3rem;
+    font-weight: 500;
   }
-
+ 
   .info-block-value {
     font-size: 0.92rem;
     color: var(--black);
     font-weight: 500;
   }
-
+ 
+  /* ── DARK BAND — CHALLENGES ── */
+  .dark-band {
+    background: var(--bg-dark);
+    padding: 4.5rem 0;
+    margin: 0;
+  }
+ 
+  .dark-band .content-wrap { }
+ 
+  .dark-band .section-num { color: var(--green-mid); }
+ 
+  .dark-band h2 { color: #ffffff; }
+ 
+  .dark-band p { color: rgba(255,255,255,0.5); }
+ 
   .challenge-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-top: 2.25rem;
   }
-
+ 
   .challenge-item {
     padding: 1.75rem;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background: var(--bg-dark);
+    transition: background 0.25s;
   }
-
+ 
+  .challenge-item:hover { background: rgba(255,255,255,0.03); }
+ 
+  .challenge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+  }
+ 
   .challenge-title {
     font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--black);
-    margin-bottom: 0.45rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
   }
-
+ 
   .challenge-desc {
-    font-size: 0.86rem;
-    color: var(--gray-dark);
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.42);
     line-height: 1.65;
-    margin-bottom: 0;
+    font-weight: 300;
   }
-
-  .approach-list { margin-top: 1.5rem; }
-
+ 
+  /* ── APPROACH ── */
+  .approach-list { margin-top: 2rem; }
+ 
   .approach-item {
     display: grid;
-    grid-template-columns: 2.5rem 1fr;
+    grid-template-columns: 56px 1fr;
     gap: 1.5rem;
-    padding: 1.75rem 0;
+    padding: 2rem 0;
     border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
   }
-
+ 
   .approach-item:first-child { border-top: 1px solid var(--border); }
-
+  .approach-item:hover { background: var(--green-pale); padding-left: 0.75rem; padding-right: 0.75rem; margin: 0 -0.75rem; border-radius: 4px; }
+ 
   .approach-num {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1rem;
-    color: var(--gray-light);
-    padding-top: 0.15rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--border);
+    padding-top: 0.1rem;
+    font-style: italic;
   }
-
+ 
   .approach-title {
     font-weight: 600;
     font-size: 0.92rem;
     color: var(--black);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.01em;
   }
-
-  .approach-bullets {
-    list-style: none;
-    padding: 0;
-  }
-
+ 
+  .approach-bullets { list-style: none; padding: 0; }
+ 
   .approach-bullets li {
     font-size: 0.86rem;
     color: var(--gray-dark);
-    padding: 0.2rem 0 0.2rem 1.1rem;
+    padding: 0.22rem 0 0.22rem 1.2rem;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.65;
+    font-weight: 300;
   }
-
+ 
   .approach-bullets li::before {
-    content: '—';
+    content: '→';
     position: absolute;
     left: 0;
-    color: var(--gray-light);
+    color: var(--green);
     font-size: 0.75rem;
+    top: 0.3rem;
   }
-
+ 
+  /* ── RESULTS — WARM BAND ── */
+  .warm-band {
+    background: var(--bg-warm);
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+ 
   .results-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-    margin-top: 2rem;
+    border: 1px solid var(--border);
+    margin-top: 2.25rem;
+    background: var(--bg-white);
   }
-
+ 
   .result-block {
     padding: 1.75rem;
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-
+ 
+  .result-block:nth-child(even) { border-right: none; }
+  .result-block:nth-last-child(-n+2) { border-bottom: none; }
+ 
   .result-title {
     font-weight: 600;
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     color: var(--black);
     margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
-
-  .result-list {
-    list-style: none;
-    padding: 0;
-  }
-
+ 
+  .result-list { list-style: none; padding: 0; }
+ 
   .result-list li {
     font-size: 0.84rem;
     color: var(--gray-dark);
-    padding: 0.25rem 0 0.25rem 1rem;
+    padding: 0.28rem 0 0.28rem 1.1rem;
     position: relative;
     line-height: 1.6;
+    font-weight: 300;
   }
-
+ 
   .result-list li::before {
     content: '–';
     position: absolute;
     left: 0;
     color: var(--green);
-  }
-
-  .callout {
-    background: var(--green-light);
-    border-left: 3px solid var(--green);
-    padding: 1.75rem 2rem;
-    margin-top: 2.5rem;
-  }
-
-  .callout-text {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--black);
-    margin-bottom: 0.6rem;
-  }
-
-  .callout-source {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--green);
-  }
-
-  .wins-list {
-    margin-top: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .win-item {
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 2rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
-  }
-
-  .win-label {
-    font-size: 0.82rem;
     font-weight: 600;
-    color: var(--black);
-    line-height: 1.4;
-    padding-top: 0.1rem;
   }
-
+ 
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--bg-dark);
+    padding: 2.5rem 2.75rem;
+    margin-top: 2.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .callout::before {
+    content: '\201C';
+    position: absolute;
+    top: -1.5rem;
+    left: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 10rem;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+ 
+  .callout-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+  }
+ 
+  .callout-source {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+ 
+  /* ── KEY WINS ── */
+  .wins-list {
+    margin-top: 1.75rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+ 
+  .win-item {
+    padding: 1.75rem;
+    background: var(--bg-white);
+    transition: background 0.2s;
+  }
+ 
+  .win-item:hover { background: var(--green-pale); }
+ 
+  .win-label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+ 
   .win-desc {
-    font-size: 0.9rem;
+    font-size: 0.87rem;
     color: var(--gray-dark);
     line-height: 1.72;
+    font-weight: 300;
     margin-bottom: 0;
   }
-
+ 
+  /* ── TOOLS ── */
   .tools-wrap {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
-
+ 
   .tool-tag {
     font-size: 0.78rem;
-    color: var(--gray-dark);
-    border: 1px solid var(--border);
-    padding: 0.35rem 0.85rem;
+    color: var(--green-dark);
+    border: 1.5px solid var(--green);
+    padding: 0.4rem 1rem;
     border-radius: 100px;
-    background: var(--bg-soft);
+    background: var(--green-pale);
+    font-weight: 500;
+    transition: all 0.2s;
   }
-
+ 
+  .tool-tag:hover {
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+  }
+ 
+  /* ── SUMMARY ── */
   .summary-section {
-    padding: 4rem 0 5rem;
+    padding: 4.5rem 0 5.5rem;
   }
-
+ 
   .summary-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3.5rem;
     margin-top: 2rem;
   }
-
+ 
   .summary-skills {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
     border-top: 1px solid var(--border);
   }
-
+ 
   .summary-skills li {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--gray-dark);
-    padding: 0.7rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.75rem;
+    font-weight: 300;
   }
-
+ 
   .summary-skills li::before {
     content: '';
     display: inline-block;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background: var(--green);
     border-radius: 50%;
     flex-shrink: 0;
   }
-
+ 
   .summary-note {
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
-    padding: 2rem;
+    background: var(--bg-dark);
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
   }
-
-  .summary-note p { font-size: 0.9rem; }
-
+ 
+  .summary-note::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(45,158,96,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+ 
   .note-tag {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gray-mid);
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--green-mid);
+    margin-bottom: 1rem;
+    font-weight: 600;
   }
-
+ 
+  .summary-note p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.78;
+    font-weight: 300;
+  }
+ 
+  /* ── FOOTER ── */
   footer {
-    border-top: 1px solid var(--border);
-    padding: 1.5rem 3rem;
+    background: var(--bg-dark);
+    padding: 1.5rem 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
+ 
   .footer-text {
-    font-size: 0.75rem;
-    color: var(--gray-mid);
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
   }
-
+ 
+  /* ── REVEAL ── */
   .reveal {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-
   .reveal.visible { opacity: 1; transform: none; }
-
+ 
+  /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
     header, footer { padding: 1rem 1.5rem; }
-    .hero, .content-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .hero { padding-top: 3rem; padding-bottom: 2.5rem; }
-    .metrics-row { grid-template-columns: 1fr 1fr; }
-    .challenge-list, .results-grid, .client-grid, .summary-body { grid-template-columns: 1fr; }
-    .win-item { grid-template-columns: 1fr; gap: 0.4rem; }
+    .hero { padding: 3rem 1.5rem 0; }
+    .content-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .metrics-strip { grid-template-columns: 1fr 1fr; }
+    .challenge-list, .wins-list { grid-template-columns: 1fr; }
+    .client-grid, .results-grid, .summary-body { grid-template-columns: 1fr; }
+    .info-block, .result-block { border-right: none; }
   }
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div class="header-brand">420.com</div>
   <div class="header-meta">SEO Case Study · 2025</div>
 </header>
-
-<div class="hero reveal">
-  <div class="hero-label">Case Study · SEO Growth &amp; Organic Traffic Scaling</div>
-  <h1 class="hero-title">From invisible to <em>297% user growth</em> in 90 days</h1>
-  <p class="hero-sub">How a focused SEO strategy transformed 420.com's organic search presence into a high-performing, multi-channel acquisition engine — without paid media.</p>
-  <div class="metrics-row">
+ 
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner reveal">
+    <div class="hero-eyebrow"><span></span>Case Study · SEO Growth &amp; Organic Traffic Scaling</div>
+    <h1 class="hero-title">From invisible to <em>297% user growth</em> in 90 days</h1>
+    <p class="hero-sub">How a focused SEO strategy transformed 420.com's organic search presence into a high-performing, multi-channel acquisition engine — without paid media.</p>
+  </div>
+  <div class="metrics-strip reveal">
     <div class="metric">
       <div class="metric-value">297%</div>
-      <span class="metric-change">Active Users</span>
-      <div class="metric-label">YoY Growth</div>
+      <span class="metric-change">Active Users Growth</span>
+      <div class="metric-label">Year on Year</div>
     </div>
     <div class="metric">
       <div class="metric-value">1.2M</div>
-      <span class="metric-change">+191.2%</span>
+      <span class="metric-change">+191.2% YoY</span>
       <div class="metric-label">Total Views</div>
     </div>
     <div class="metric">
@@ -496,17 +650,18 @@
     </div>
     <div class="metric">
       <div class="metric-value">34 min</div>
-      <span class="metric-change">Avg. Session</span>
-      <div class="metric-label">Engagement Time</div>
+      <span class="metric-change">Avg. Engagement</span>
+      <div class="metric-label">Session Time</div>
     </div>
   </div>
 </div>
-
+ 
 <div class="content-wrap">
-
+ 
+  <!-- ABOUT CLIENT -->
   <div class="section reveal">
     <span class="section-num">01 · About the Client</span>
-    <h2>Who is 420.com?</h2>
+    <h2>What is 420.com?</h2>
     <p>420.com is a global lifestyle and content platform in the cannabis space, serving a wide audience interested in cannabis culture, education, and related products. Operating in a highly competitive and restrictive niche, the brand relies heavily on organic search as its primary growth engine — making SEO a critical priority.</p>
     <p>Despite having an established domain and recognizable brand name, the website was significantly underperforming in organic search when the engagement began.</p>
     <div class="client-grid">
@@ -528,39 +683,53 @@
       </div>
     </div>
   </div>
-
-  <div class="section reveal">
+ 
+</div>
+ 
+<!-- DARK BAND — CHALLENGES -->
+<div class="dark-band reveal">
+  <div class="content-wrap">
     <span class="section-num">02 · The Challenge</span>
     <h2>Key problems to solve</h2>
-    <p>The site had clear potential — an established domain, a recognizable name — but no coherent SEO foundation to capitalize on it. Six core issues needed to be addressed simultaneously.</p>
+    <p>The site had clear potential — an established domain, a recognizable name — but no coherent SEO foundation to capitalize on it.</p>
     <div class="challenge-list">
       <div class="challenge-item">
+        <div class="challenge-num">01</div>
         <div class="challenge-title">Zero traffic visibility</div>
         <p class="challenge-desc">Low organic traffic despite an established domain. The site wasn't ranking for any meaningful commercial or informational terms.</p>
       </div>
       <div class="challenge-item">
+        <div class="challenge-num">02</div>
         <div class="challenge-title">Weak keyword strategy</div>
         <p class="challenge-desc">No structured approach to capturing search demand. Missing keyword targeting and content alignment across the funnel.</p>
       </div>
       <div class="challenge-item">
+        <div class="challenge-num">03</div>
         <div class="challenge-title">Poor internal linking</div>
         <p class="challenge-desc">Inadequate internal structure made it difficult for search engines to discover and index pages efficiently.</p>
       </div>
       <div class="challenge-item">
+        <div class="challenge-num">04</div>
         <div class="challenge-title">No AI search presence</div>
         <p class="challenge-desc">Complete absence in AI-driven tools like ChatGPT and Perplexity — a growing and critical discovery channel.</p>
       </div>
       <div class="challenge-item">
+        <div class="challenge-num">05</div>
         <div class="challenge-title">Technical debt</div>
         <p class="challenge-desc">Crawl errors, redirect chains, and indexing issues slowing performance and limiting search engine trust signals.</p>
       </div>
       <div class="challenge-item">
+        <div class="challenge-num">06</div>
         <div class="challenge-title">Authority gap</div>
         <p class="challenge-desc">A weak backlink profile relative to competitors, limiting the ability to rank for competitive cannabis terms.</p>
       </div>
     </div>
   </div>
-
+</div>
+ 
+<div class="content-wrap">
+ 
+  <!-- APPROACH -->
   <div class="section reveal">
     <span class="section-num">03 · My Approach</span>
     <h2>Building a connected ecosystem</h2>
@@ -623,8 +792,12 @@
       </div>
     </div>
   </div>
-
-  <div class="section reveal">
+ 
+</div>
+ 
+<!-- WARM BAND — RESULTS -->
+<div class="warm-band reveal">
+  <div class="content-wrap">
     <span class="section-num">04 · Results & Performance</span>
     <h2>Traffic & user growth (90 days)</h2>
     <p>The data from Google Analytics GA4 across the 90-day window tells a clear story — compounded improvements across every channel, not a single spike.</p>
@@ -669,7 +842,11 @@
       <span class="callout-source">Key Insight</span>
     </div>
   </div>
-
+</div>
+ 
+<div class="content-wrap">
+ 
+  <!-- KEY WINS -->
   <div class="section reveal">
     <span class="section-num">05 · Key Wins</span>
     <h2>What was achieved</h2>
@@ -692,7 +869,8 @@
       </div>
     </div>
   </div>
-
+ 
+  <!-- TOOLS -->
   <div class="section reveal">
     <span class="section-num">06 · Tools & Skills Used</span>
     <h2>The toolkit</h2>
@@ -710,7 +888,8 @@
       <span class="tool-tag">Google Search Console</span>
     </div>
   </div>
-
+ 
+  <!-- SUMMARY -->
   <div class="summary-section reveal">
     <span class="section-num">07 · Summary</span>
     <h2>What this project demonstrates</h2>
@@ -731,23 +910,23 @@
       </div>
     </div>
   </div>
-
+ 
 </div>
-
+ 
 <footer>
   <span class="footer-text">420.com · SEO Growth & Organic Traffic Scaling Case Study</span>
   <span class="footer-text">2025</span>
 </footer>
-
+ 
 <script>
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.06 });
   els.forEach(el => obs.observe(el));
 </script>
-
+ 
 </body>
 </html>
