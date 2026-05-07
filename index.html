@@ -1,1 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SEO Growth & Organic Traffic Scaling — 420.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black: #111111;
+    --gray-dark: #444444;
+    --gray-mid: #888888;
+    --gray-light: #cccccc;
+    --border: #e2e2e2;
+    --bg: #ffffff;
+    --bg-soft: #f7f7f5;
+    --green: #1a6640;
+    --green-light: #edf5f0;
+  }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--black);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-meta {
+    font-size: 0.78rem;
+    color: var(--gray-mid);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .header-brand {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.15rem;
+    color: var(--black);
+  }
+
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 3rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    font-weight: 400;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 3.5rem;
+  }
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
+
+  .metric {
+    padding: 1.5rem 1.25rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .metric-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.3rem;
+    line-height: 1;
+    color: var(--black);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .metric-change {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 0.15rem;
+    display: block;
+  }
+
+  .metric-label {
+    font-size: 0.72rem;
+    color: var(--gray-mid);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .content-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.8rem;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--black);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    line-height: 1.78;
+    margin-bottom: 1rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .client-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  .info-block {
+    padding: 1.25rem 1.5rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-block-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+    margin-bottom: 0.3rem;
+  }
+
+  .info-block-value {
+    font-size: 0.92rem;
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  .challenge-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  .challenge-item {
+    padding: 1.75rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .challenge-title {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--black);
+    margin-bottom: 0.45rem;
+  }
+
+  .challenge-desc {
+    font-size: 0.86rem;
+    color: var(--gray-dark);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .approach-list { margin-top: 1.5rem; }
+
+  .approach-item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .approach-item:first-child { border-top: 1px solid var(--border); }
+
+  .approach-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1rem;
+    color: var(--gray-light);
+    padding-top: 0.15rem;
+  }
+
+  .approach-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--black);
+    margin-bottom: 0.6rem;
+  }
+
+  .approach-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .approach-bullets li {
+    font-size: 0.86rem;
+    color: var(--gray-dark);
+    padding: 0.2rem 0 0.2rem 1.1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .approach-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gray-light);
+    font-size: 0.75rem;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  .result-block {
+    padding: 1.75rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .result-title {
+    font-weight: 600;
+    font-size: 0.86rem;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+  }
+
+  .result-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .result-list li {
+    font-size: 0.84rem;
+    color: var(--gray-dark);
+    padding: 0.25rem 0 0.25rem 1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .result-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+  }
+
+  .callout {
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    padding: 1.75rem 2rem;
+    margin-top: 2.5rem;
+  }
+
+  .callout-text {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--black);
+    margin-bottom: 0.6rem;
+  }
+
+  .callout-source {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green);
+  }
+
+  .wins-list {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .win-item {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .win-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.4;
+    padding-top: 0.1rem;
+  }
+
+  .win-desc {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    line-height: 1.72;
+    margin-bottom: 0;
+  }
+
+  .tools-wrap {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tool-tag {
+    font-size: 0.78rem;
+    color: var(--gray-dark);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    background: var(--bg-soft);
+  }
+
+  .summary-section {
+    padding: 4rem 0 5rem;
+  }
+
+  .summary-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+
+  .summary-skills {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .summary-skills li {
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .summary-skills li::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--green);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .summary-note {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+
+  .summary-note p { font-size: 0.9rem; }
+
+  .note-tag {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+    color: var(--gray-mid);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    header, footer { padding: 1rem 1.5rem; }
+    .hero, .content-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero { padding-top: 3rem; padding-bottom: 2.5rem; }
+    .metrics-row { grid-template-columns: 1fr 1fr; }
+    .challenge-list, .results-grid, .client-grid, .summary-body { grid-template-columns: 1fr; }
+    .win-item { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">420.com</div>
+  <div class="header-meta">SEO Case Study · 2025</div>
+</header>
+
+<div class="hero reveal">
+  <div class="hero-label">Case Study · SEO Growth &amp; Organic Traffic Scaling</div>
+  <h1 class="hero-title">From invisible to <em>297% user growth</em> in 90 days</h1>
+  <p class="hero-sub">How a focused SEO strategy transformed 420.com's organic search presence into a high-performing, multi-channel acquisition engine — without paid media.</p>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-value">297%</div>
+      <span class="metric-change">Active Users</span>
+      <div class="metric-label">YoY Growth</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">1.2M</div>
+      <span class="metric-change">+191.2%</span>
+      <div class="metric-label">Total Views</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">221+</div>
+      <span class="metric-change">Keywords Ranked</span>
+      <div class="metric-label">In 90 Days</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">34 min</div>
+      <span class="metric-change">Avg. Session</span>
+      <div class="metric-label">Engagement Time</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="section reveal">
+    <span class="section-num">01 · About the Client</span>
+    <h2>Who is 420.com?</h2>
+    <p>420.com is a global lifestyle and content platform in the cannabis space, serving a wide audience interested in cannabis culture, education, and related products. Operating in a highly competitive and restrictive niche, the brand relies heavily on organic search as its primary growth engine — making SEO a critical priority.</p>
+    <p>Despite having an established domain and recognizable brand name, the website was significantly underperforming in organic search when the engagement began.</p>
+    <div class="client-grid">
+      <div class="info-block">
+        <div class="info-block-label">Industry</div>
+        <div class="info-block-value">Cannabis Lifestyle & Content</div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">Website</div>
+        <div class="info-block-value">420.com</div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">Services</div>
+        <div class="info-block-value">SEO + AEO</div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">Duration</div>
+        <div class="info-block-value">90-Day Engagement</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <span class="section-num">02 · The Challenge</span>
+    <h2>Key problems to solve</h2>
+    <p>The site had clear potential — an established domain, a recognizable name — but no coherent SEO foundation to capitalize on it. Six core issues needed to be addressed simultaneously.</p>
+    <div class="challenge-list">
+      <div class="challenge-item">
+        <div class="challenge-title">Zero traffic visibility</div>
+        <p class="challenge-desc">Low organic traffic despite an established domain. The site wasn't ranking for any meaningful commercial or informational terms.</p>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-title">Weak keyword strategy</div>
+        <p class="challenge-desc">No structured approach to capturing search demand. Missing keyword targeting and content alignment across the funnel.</p>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-title">Poor internal linking</div>
+        <p class="challenge-desc">Inadequate internal structure made it difficult for search engines to discover and index pages efficiently.</p>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-title">No AI search presence</div>
+        <p class="challenge-desc">Complete absence in AI-driven tools like ChatGPT and Perplexity — a growing and critical discovery channel.</p>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-title">Technical debt</div>
+        <p class="challenge-desc">Crawl errors, redirect chains, and indexing issues slowing performance and limiting search engine trust signals.</p>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-title">Authority gap</div>
+        <p class="challenge-desc">A weak backlink profile relative to competitors, limiting the ability to rank for competitive cannabis terms.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <span class="section-num">03 · My Approach</span>
+    <h2>Building a connected ecosystem</h2>
+    <p>The strategy focused on compounding actions — not isolated fixes. Every layer of work was designed to reinforce the next, creating sustainable momentum across all organic channels.</p>
+    <div class="approach-list">
+      <div class="approach-item">
+        <div class="approach-num">01</div>
+        <div>
+          <div class="approach-title">On-Page SEO Optimization</div>
+          <ul class="approach-bullets">
+            <li>Optimized meta titles, descriptions, and headings for target keywords and click-through rate</li>
+            <li>Improved keyword placement and readability across all key pages</li>
+            <li>Enhanced internal linking between pages and search engines</li>
+          </ul>
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-num">02</div>
+        <div>
+          <div class="approach-title">Keyword Strategy & Expansion</div>
+          <ul class="approach-bullets">
+            <li>Targeted long-tail, intent-driven keywords to capture qualified traffic</li>
+            <li>Expanded keyword coverage across key pages and content clusters</li>
+            <li>Built topical authority silos around core cannabis themes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-num">03</div>
+        <div>
+          <div class="approach-title">Internal Linking & Structure</div>
+          <ul class="approach-bullets">
+            <li>Strengthened internal linking framework for better crawl efficiency</li>
+            <li>Ensured topical authority signals across all key pages</li>
+            <li>Enhanced crawlability and navigation for both users and bots</li>
+          </ul>
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-num">04</div>
+        <div>
+          <div class="approach-title">Technical SEO Foundations</div>
+          <ul class="approach-bullets">
+            <li>Fixed indexing and crawlability issues causing visibility loss</li>
+            <li>Resolved redirect chains and ensured key pages were properly discoverable</li>
+            <li>Improved overall site architecture and URL structure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="approach-item">
+        <div class="approach-num">05</div>
+        <div>
+          <div class="approach-title">AI Search Optimization (AEO)</div>
+          <ul class="approach-bullets">
+            <li>Structured content for AI-driven search visibility across ChatGPT, Perplexity, and Google AI Mode</li>
+            <li>Included topical depth and authority signals across all content</li>
+            <li>Increased probability of being cited in AI responses and answer engines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <span class="section-num">04 · Results & Performance</span>
+    <h2>Traffic & user growth (90 days)</h2>
+    <p>The data from Google Analytics GA4 across the 90-day window tells a clear story — compounded improvements across every channel, not a single spike.</p>
+    <div class="results-grid">
+      <div class="result-block">
+        <div class="result-title">Audience & Geographic Quality</div>
+        <ul class="result-list">
+          <li>94% of traffic from the United States — high-value, targeted audience</li>
+          <li>Strong presence in high-intent cannabis markets</li>
+          <li>31-minute average engagement time indicating high content relevance</li>
+          <li>High traffic quality, not just volume</li>
+        </ul>
+      </div>
+      <div class="result-block">
+        <div class="result-title">Traffic Acquisition (Last 28 Days)</div>
+        <ul class="result-list">
+          <li>Organic Search: 4,600+ users with 84.8% engagement rate</li>
+          <li>Referral: 3,900+ users (27× site visits) supporting authority signals</li>
+          <li>Direct: 400+ visitors reflecting growing brand recognition</li>
+          <li>Email & Organic Shopping: Exceptionally high engagement time</li>
+        </ul>
+      </div>
+      <div class="result-block">
+        <div class="result-title">Search & Authority Metrics</div>
+        <ul class="result-list">
+          <li>221+ ranking keywords across competitive clusters</li>
+          <li>54% U.S. traffic share establishing strong local authority</li>
+          <li>High-quality backlinks from relevant, authoritative domains</li>
+        </ul>
+      </div>
+      <div class="result-block">
+        <div class="result-title">Compounding Growth Pattern</div>
+        <ul class="result-list">
+          <li>Each improvement amplified the results of previous work</li>
+          <li>Diversified channel mix reducing reliance on any single source</li>
+          <li>Strong foundation set for long-term SEO scalability</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <p class="callout-text">The biggest impact came from aligning search intent, content structure, and site architecture simultaneously — creating a compounding system where improvements in one area amplified all others.</p>
+      <span class="callout-source">Key Insight</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <span class="section-num">05 · Key Wins</span>
+    <h2>What was achieved</h2>
+    <div class="wins-list">
+      <div class="win-item">
+        <div class="win-label">Explosive Growth at Scale</div>
+        <p class="win-desc">Nearly tripled organic traffic within a 90-day window — proving that compounded SEO improvements deliver exponential, not linear, results without a single rupee in paid spend.</p>
+      </div>
+      <div class="win-item">
+        <div class="win-label">Multi-Channel Strength</div>
+        <p class="win-desc">Diversified traffic across Organic Search, Referral, Direct, and Email — reducing dependency on any single source and building a resilient, sustainable growth engine.</p>
+      </div>
+      <div class="win-item">
+        <div class="win-label">Authority & Brand Growth</div>
+        <p class="win-desc">Established 420.com as a topically trusted brand in the cannabis space, reflected in growing direct traffic and high-quality backlinks from authoritative domains.</p>
+      </div>
+      <div class="win-item">
+        <div class="win-label">Future-Ready SEO</div>
+        <p class="win-desc">Positioned the site to capture emerging AI-search traffic — ensuring long-term visibility as search continues evolving beyond traditional results.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <span class="section-num">06 · Tools & Skills Used</span>
+    <h2>The toolkit</h2>
+    <div class="tools-wrap">
+      <span class="tool-tag">SEO Strategy & Audits</span>
+      <span class="tool-tag">Content & Keyword Planning</span>
+      <span class="tool-tag">Analytics & Performance Tracking</span>
+      <span class="tool-tag">Semrush</span>
+      <span class="tool-tag">Ahrefs</span>
+      <span class="tool-tag">Reporting & Client Docs</span>
+      <span class="tool-tag">Technical SEO</span>
+      <span class="tool-tag">Link Building Strategy</span>
+      <span class="tool-tag">AI Search Optimization (AEO)</span>
+      <span class="tool-tag">Google Analytics GA4</span>
+      <span class="tool-tag">Google Search Console</span>
+    </div>
+  </div>
+
+  <div class="summary-section reveal">
+    <span class="section-num">07 · Summary</span>
+    <h2>What this project demonstrates</h2>
+    <div class="summary-body">
+      <div>
+        <p>This engagement proves an ability to scale organic traffic rapidly — without relying on paid ads — drive high-intent engagement, and build sustainable multi-channel brand presence for future search trends.</p>
+        <ul class="summary-skills">
+          <li>Scale organic traffic rapidly without paid media</li>
+          <li>Drive high-intent, engaged audiences from search</li>
+          <li>Build multi-channel brand presence and authority</li>
+          <li>Engineer content for AI-powered search discovery</li>
+          <li>Prepare brands for evolving search landscapes</li>
+        </ul>
+      </div>
+      <div class="summary-note">
+        <span class="note-tag">A Note</span>
+        <p>If you're looking to turn your website into a constant, scalable traffic engine, this is the kind of strategy and execution that delivers results across every project. The 420.com engagement is a strong example of what's possible when technical depth, content alignment, and strategic SEO come together.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-text">420.com · SEO Growth & Organic Traffic Scaling Case Study</span>
+  <span class="footer-text">2025</span>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
